@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper {
+    height: 4000px;
+}
+.indicator-scrill {
+    transition: 0.1s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    /*background: rgb(55, 225, 255);*/
+    background: red;
+    z-index: 5;
+}
+
+.ind {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 3px;
+    background-color: white;
+    z-index: 0;
+}
