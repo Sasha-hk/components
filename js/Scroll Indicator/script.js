@@ -1,15 +1,38 @@
-let scrollInd = document.querySelector('.indicator-scrill');
-let centerScreen = window.innerHeight / 2,
-    fullHeight = document.body.clientHeight;
+class ScrollIndicator {
+    constructor(options) {
+        this.indicatorWrapper = options.indicatorWrapper;
+        this.indicator        = options.indicator;
+        this.body             = document.body,
+        this.html             = document.documentElement;
+        this.scrollOffset     = 0;
+        this.winHeight        = Math.max(
+            this.body.scrollHeight, 
+            this.body.offsetHeight, 
+            this.html.clientHeight, 
+            this.html.scrollHeight, 
+            this.html.offsetHeight 
+        ); 
+            
+        window.addEventListener('scroll', scroll => { 
+            this.scrollOffset = window.scrollY * 100 / (this.winHeight - window.innerHeight)
+            this.indicator.style.width = this.scrollOffset + '%'
+        })
+    }
 
-window.addEventListener('scroll', scr => {  
-    // coorect value of height
-    sizeOffestCorrect = window.pageYOffset / (fullHeight - window.innerHeight) * 100;
-    
-    // get size correct
-    edit = window.innerHeight / fullHeight * sizeOffestCorrect;
-  
-    // set width
-    scrollInd.style.width = window.pageYOffset / fullHeight * 100 + edit + '%'
-})
-   
+    hide() {
+        this.indicatorWrapper.style.display = 'none'
+        return 'hidden'
+    } 
+
+    show() {
+        this.indicatorWrapper.style.display = 'block'
+        return 'shown'
+    }
+
+
+}
+
+let s = new ScrollIndicator({
+    indicatorWrapper: document.querySelector('.scrollIndicator'),
+    indicator:        document.querySelector('.indicator'),
+});

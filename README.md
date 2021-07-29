@@ -1,2 +1,2 @@
 # components
- Some parts of code to help me
+Some parts of code to help me
