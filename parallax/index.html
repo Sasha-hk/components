@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        
+        <div class="parallax-item atom">  
+            <img src="./img/atom.svg" alt="">
+        </div>
+ 
+        <div class="parallax-item shooting-stars">
+            <img src="./img/shooting-star.svg" alt="">
+        </div>
+
+        <div class="parallax-item planet">
+            <img src="./img/planet.svg" alt="">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        let p = new Parallax({
+            object: document.querySelectorAll('.parallax-item'),
+            over: document.querySelector('.wrapper'),   
+            aroundCenter: false,    
+            index: [1.2510171895074622, 0.877350758285923, 0.2895678060863364, 0.5544736852142016], 
+        }) 
+    </script>
+</body>
+</html>
