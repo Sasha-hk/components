@@ -1,4 +1,4 @@
-# **Components**
+# 📦 Components
 
 This repository collect different scripts in JS, such as:
 
